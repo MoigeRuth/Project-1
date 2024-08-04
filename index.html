@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photography</title>
+    <style>
+      body {
+        background-color: #c6ebc5;
+      }
+      button {
+        font-size: 15px;
+        color: black;
+        background: beige;
+        border: 2px solid green;
+        border-radius: 10px;
+        display: block;
+        margin: 0 auto;
+        padding: 10px;
+        cursor: pointer;
+        transition: 200ms ease-in-out;
+      }
+      h1 {
+        text-align: center;
+
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      h2 {
+        text-align: center;
+        border: 2px solid green;
+        background: #c6ebc5;
+        border-radius: 4px;
+        padding: 10px 0;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+      p {
+        line-height: 1.5;
+        text-align: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      img {
+        max-width: 100%;
+        border-radius: 5px;
+        margin: 0 20px;
+      }
+      footer {
+        color: blue;
+        text-align: center;
+        margin-top: 10px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+          "Lucida Sans", Arial, sans-serif;
+      }
+
+      img:hover {
+        transform: scale(1.1);
+        transition: 300ms ease-in-out;
+        border: 4px solid green;
+      }
+      .container {
+        max-width: 700px;
+        margin: 10px auto;
+        padding: 20px;
+        background: beige;
+        border-radius: 10px;
+      }
+      .schedule {
+        font-size: 20px;
+        background: #c6ebc5;
+        color: black;
+        margin-top: 10px;
+      }
+      .schedule:hover {
+        color: beige;
+        background: green;
+      }
+      .changeTheme:hover {
+        color: black;
+        background: #c6ebc5;
+      }
+      .pictures {
+        margin: 30px 0;
+        display: grid;
+        grid-template-columns: 200px 200px 200px;
+        grid-gap: 30px;
+      }
+      .photos {
+        margin: 30px 0;
+        display: grid;
+        grid-template-columns: 150px 150px 140px 160px;
+        grid-gap: 20px;
+      }
+      .dark {
+        background: #191a19;
+        color: beige;
+      }
+      .dark .container {
+        background: #1e5128;
+      }
+      .dark footer {
+        color: beige;
+      }
+      .dark button {
+        color: beige;
+        background: black;
+      }
+      .dark h2 {
+        background: black;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="changeTheme">Change Theme</button>
+    <div class="container">
+      <h1>Photography</h1>
+      <h2>Unveilling Beauty Through The Lens</h2>
+      <div class="pictures">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/129/525/original/portraitfour.jpg?1718795261"
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/129/522/original/Portraitone.jpg?1718795218"
+        />
+
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/129/533/original/portrait5.jpg?1718795627"
+        />
+      </div>
+
+      <p>
+        Welcome to <strong>Photocentric Portrait Studio</strong>, where every
+        moment becomes a timeless work of art. With a passion for capturing the
+        unique essence of each individual, we create stunning portraits that
+        tell your story with authenticity and elegance. Whether it's a cherished
+        family gathering, a personal milestone, or a professional headshot, our
+        meticulous attention to detail and creative vision ensure that your
+        photos are not just images, but treasured memories. Step into our studio
+        and let us bring your true self to light, one beautiful portrait at a
+        time.
+      </p>
+      <div class="photos">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/129/535/original/portrait7.jpg?1718795656"
+        />
+        <img
+          class="reduce"
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/129/534/original/portrait6.jpg?1718795644"
+        />
+        <img
+          class="reduce"
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/129/523/original/portrattwo.jpg?1718795234"
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/129/537/original/pic9.jpg?1718796783"
+        />
+      </div>
+      <button class="schedule">Book A Session</button>
+    </div>
+
+    <footer>Coded By Ruth Moige</footer>
+    <script>
+      function ChangeTheme() {
+        let body = document.querySelector("body");
+
+        if (body.classList.contains("dark")) {
+          body.classList.remove("dark");
+        } else {
+          body.classList.add("dark");
+        }
+      }
+
+      let themeButton = document.querySelector(".changeTheme");
+      themeButton.addEventListener("click", ChangeTheme);
+
+      function contactUs() {
+        let name = prompt("What is your name?");
+        let time = prompt(
+          "What day and time will you come in for a photoshoot?"
+        );
+        alert(
+          "Session Booked for " + time + "." + " See you soon " + name + "🤗!"
+        );
+      }
+
+      let contactButton = document.querySelector(".schedule");
+      contactButton.addEventListener("click", contactUs);
+    </script>
+  </body>
+</html>
